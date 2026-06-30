@@ -7,11 +7,13 @@ export function NotificationFilter({ value, onChange }) {
     <ToggleButtonGroup
       value={value}
       exclusive
+      onChange={onChange}
       size="small"
-      sx={{ flexWrap: "wrap", gap: 0.5 }}
+      aria-label="notification type filter"
+      sx={{ flexWrap: "wrap", gap: 0.75 }}
     >
       {filters.map((type) => (
-        <ToggleButton value={type} sx={{ textTransform: "none", px: 2 }}>
+        <ToggleButton key={type} value={type} sx={{ textTransform: "none", px: 2 }}>
           {type}
         </ToggleButton>
       ))}
